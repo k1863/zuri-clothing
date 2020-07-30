@@ -2,7 +2,6 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-
 const config = {
   apiKey: "AIzaSyBo_USm0IWvHXtVcHam-tf6KOY87_2dNWg",
   authDomain: "zuri-db.firebaseapp.com",
@@ -33,15 +32,13 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         email,
         createdAt,
         ...additionalData,
-      })
+      });
     } catch (error) {
       console.log(error.message, "error creating user");
     }
   }
   return userRef;
 };
-
-
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
