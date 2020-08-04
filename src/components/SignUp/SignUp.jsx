@@ -16,6 +16,7 @@ class SignUp extends Component {
       confirmPassword: "",
     };
   }
+
   handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -62,7 +63,7 @@ class SignUp extends Component {
             onChange={this.handleChange}
             label="Display Name"
             required
-          ></FormInput>
+          />
           <FormInput
             type="email"
             name="email"

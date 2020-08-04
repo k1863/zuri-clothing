@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../zuri-logo.svg";
 import "./NavContainerStyles.scss";
 import { auth } from "../../firebase/firebase.utils";
+import { connect } from "react-redux";
 
 const NavContainer = ({currentUser}) => {
   return (
@@ -30,4 +31,8 @@ const NavContainer = ({currentUser}) => {
   );
 };
 
-export default NavContainer;
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
+
+export default connect(mapStateToProps)(NavContainer);
