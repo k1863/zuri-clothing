@@ -10,17 +10,18 @@
   top: 90px;
   right: 40px;
   z-index: 5;
-  overflow-y: auto;
+
 
    .cart-items {
     height: 240px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
   }
   
   button {
-    margin: 0 !important;
-    padding: 0 !important;
+    margin-top: auto !important;
+    padding:0!important;
 
   }
 
