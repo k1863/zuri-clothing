@@ -13,6 +13,7 @@ import SignInSignUpPage from "./pages/SignInSignUpPage/SignInSignUpPage.jsx";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/userActions";
 import { selectCurrentUser } from "./redux/user/userSelector";
+import { selectCollectionsForPreview } from "./redux/shop/shopSelector";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -42,6 +43,7 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
       <div>
         <NavContainer />
@@ -67,6 +69,7 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  collectionsArray: selectCollectionsForPreview,
 });
 
 const mapDispatchToProps = (dispatch) => ({
